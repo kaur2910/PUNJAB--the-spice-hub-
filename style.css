@@ -33,9 +33,16 @@ section {
     padding: 20px;
 }
 
-img {
-    margin-top: 15px;
-    border-radius: 10px;
+    img {
+    width: 100%;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+img:hover {
+    transform: scale(1.03);
+
+   
 }
 
 footer {

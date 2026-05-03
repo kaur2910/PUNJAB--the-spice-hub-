@@ -4,98 +4,87 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PUNJAB – The Spice Hub</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600&family=Great+Vibes&display=swap" rel="stylesheet"><style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#ff9a3c,#ff5e62);color:#222;}
+body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#ff6a00,#ee0979);color:#222;}
 .wrapper{max-width:1200px;margin:auto;}
 
-nav{display:flex;justify-content:center;gap:18px;padding:10px 0;background:rgba(0,0,0,0.7);position:sticky;top:0;backdrop-filter:blur(6px);} 
-nav a{color:#fff;text-decoration:none;font-size:0.9rem;letter-spacing:1px;}
+/* NAV */
+nav{display:flex;justify-content:center;gap:18px;padding:10px;background:rgba(0,0,0,0.75);position:sticky;top:0;backdrop-filter:blur(6px);} 
+nav a{color:white;text-decoration:none;font-size:0.9rem;letter-spacing:1px;transition:0.3s;}
 nav a:hover{color:#ffd700;}
 
-.hero{height:80vh;background:url('hero.png') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;}
-.hero::after{content:'';position:absolute;width:100%;height:100%;background:rgba(0,0,0,0.6);} 
+/* HERO */
+.hero{height:85vh;background:url('hero.png') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;}
+.hero::after{content:'';position:absolute;width:100%;height:100%;background:rgba(0,0,0,0.65);} 
 .hero-content{position:relative;color:white;}
-.hero h1{font-family:'Playfair Display',serif;font-size:3.2rem;}
+.hero h1{font-family:'Playfair Display',serif;font-size:3.5rem;letter-spacing:2px;}
 .hero p{margin-top:10px;font-size:1.3rem;}
 
-.section{padding:70px 20px;text-align:center;background:#fff;}
-.section:nth-child(even){background:#fff5ee;}
-.section h2{font-family:'Playfair Display',serif;font-size:2.2rem;margin-bottom:15px;color:#d84315;}
-.section p{max-width:750px;margin:auto;margin-bottom:20px;line-height:1.7;}
+/* SECTION */
+.section{padding:80px 20px;text-align:center;background:white;}
+.section:nth-child(even){background:#fff0f5;}
+.section h2{font-family:'Playfair Display',serif;font-size:2.3rem;margin-bottom:15px;color:#d84315;}
+.section p{max-width:800px;margin:auto;line-height:1.8;margin-bottom:20px;}
 
+/* FOOD GRID */
 .container{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;margin-top:20px;}
-
-.card{background:white;border-radius:20px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,0.2);transition:0.3s;cursor:pointer;}
-.card:hover{transform:scale(1.05);} 
-.card img{width:100%;height:220px;object-fit:cover;}
+.card{background:white;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.2);transition:0.3s;cursor:pointer;}
+.card:hover{transform:scale(1.08);} 
+.card img{width:100%;height:230px;object-fit:cover;}
 .card h3{padding:10px;font-weight:600;}
-.card p{padding:0 10px 15px;font-size:0.95rem;}
+.card p{padding:0 10px 15px;}
 
-/* RECIPE SECTION */
-.recipe-box{background:#fff;border-radius:20px;padding:25px;text-align:left;box-shadow:0 10px 25px rgba(0,0,0,0.2);margin-top:20px;}
-.recipe-title{font-family:'Great Vibes',cursive;font-size:2rem;color:#c62828;margin-bottom:10px;}
+/* RECIPE */
+.recipe-box{background:white;border-radius:20px;padding:30px;text-align:left;box-shadow:0 10px 30px rgba(0,0,0,0.2);margin-top:20px;}
+.recipe-title{font-family:'Great Vibes',cursive;font-size:2.3rem;color:#c62828;margin-bottom:10px;}
 .recipe-box strong{color:#bf360c;}
 .recipe-box ul{padding-left:20px;margin:10px 0;}
 .recipe-box li{margin-bottom:6px;}
-.recipe-box p{font-size:0.95rem;line-height:1.6;}
+.recipe-box p{line-height:1.7;}
 
-/* IMAGE MODAL */
-.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;}
-.modal img{max-width:90%;max-height:80%;border-radius:10px;}
-.modal:target{display:flex;}
+/* BUTTON */
+.btn{display:inline-block;margin-top:15px;padding:10px 20px;background:#ff5722;color:white;border-radius:20px;text-decoration:none;transition:0.3s;}
+.btn:hover{background:#e64a19;}
 
 footer{text-align:center;padding:20px;background:#111;color:white;}
 
 @media(max-width:600px){
-.hero h1{font-size:2.2rem;}
+.hero h1{font-size:2.3rem;}
 }
 </style></head>
 <body><div class="wrapper"><nav>
-<a href="#about">About</a>
-<a href="#food">Food</a>
-<a href="#recipe">Recipe</a>
+<a href="about.html">About</a>
+<a href="food.html">Food</a>
+<a href="recipe.html">Recipe</a>
 <a href="#contact">Contact</a>
 </nav><div class="hero">
 <div class="hero-content">
 <h1>PUNJAB – The Spice Hub 🌶️</h1>
-<p>A journey through flavour, tradition and culture</p>
+<p>Where culture, flavour and tradition come alive</p>
+<a href="food.html" class="btn">Explore Food</a>
 </div>
-</div><div class="section" id="about">
+</div><div class="section">
 <h2>About Punjab</h2>
-<p>Punjab is a land of vibrant culture, energetic festivals, and heartwarming hospitality. The cuisine reflects the agricultural richness of the region, combining bold spices, fresh ingredients, and traditional cooking techniques. Food is not just nourishment in Punjab, but a celebration of life, bringing families and communities together.</p>
-</div><div class="section" id="food">
+<p>Punjab is not just a place, but a feeling of warmth, celebration, and togetherness. Known for its vibrant traditions, energetic music, and colourful festivals, Punjab represents a culture that embraces life with open arms. The cuisine of Punjab reflects its agricultural roots, where fresh produce and dairy play a central role in creating rich, satisfying meals.</p><p>Food in Punjab is deeply connected to emotions and community. Meals are often shared with family and friends, symbolising unity and hospitality. From traditional farms to modern kitchens, Punjabi cooking continues to preserve its authenticity while adapting to new influences. This website aims to showcase not just dishes, but the cultural identity behind them.</p><a href="about.html" class="btn">Read More</a>
+
+</div><div class="section">
 <h2>Popular Dishes</h2>
-<p>Punjabi dishes are known for their richness, texture, and comforting taste. These meals represent both tradition and emotional connection, often prepared during gatherings and special occasions.</p><div class="container">
-<a href="#img1" class="card">
+<p>Punjabi cuisine is bold, rich, and full of flavour. Each dish reflects a balance of spices, texture, and tradition.</p><div class="container">
+<div class="card">
 <img src="food2.png">
 <h3>Sarson da Saag</h3>
-<p>A nutritious dish made with mustard greens, offering deep earthy flavors.</p>
-</a><a href="#img2" class="card">
+<p>A winter delicacy made with mustard greens and spices.</p>
+<a href="recipe.html" class="btn">View Recipe</a>
+</div><div class="card">
 <img src="food3.png">
 <h3>Makki di Roti</h3>
-<p>A traditional flatbread made from maize flour, enhancing the taste of saag.</p>
-</a>
+<p>A traditional maize bread served with saag.</p>
+<a href="recipe.html" class="btn">View Recipe</a>
 </div>
-</div><!-- MODALS --><div id="img1" class="modal"><img src="food2.png"></div>
-<div id="img2" class="modal"><img src="food3.png"></div><div class="section" id="recipe">
-<h2>Traditional Recipe</h2>
-<p>This section provides a deeper understanding of Punjabi cooking by explaining a traditional recipe. It highlights both the cultural importance and the preparation process, making the website more informative and engaging.</p><div class="recipe-box">
-<div class="recipe-title">Sarson da Saag</div><strong>Ingredients:</strong>
-
-<ul>
-<li>Fresh mustard greens (sarson)</li>
-<li>Spinach leaves</li>
-<li>Ginger and garlic paste</li>
-<li>Green chilies</li>
-<li>Makhan (butter)</li>
-<li>Basic spices (salt, turmeric, red chili)</li>
-</ul><strong>Detailed Method:</strong>
-
-<p>Begin by thoroughly washing the greens to remove any impurities. Boil them until soft and tender, then blend them into a coarse paste. Heat butter in a pan and sauté ginger, garlic, and green chilies until aromatic. Add the blended mixture and cook slowly on low heat, allowing the flavours to deepen. Stir occasionally to maintain texture. This slow cooking process is essential to achieve the authentic taste.</p><p>Serve hot with makki di roti and a generous amount of butter. This dish represents comfort, tradition, and the essence of Punjabi cuisine.</p>
 </div>
 </div><div class="section" id="contact">
 <h2>Contact</h2>
 <p>Email: PUNJAB@gmail.com</p>
 </div><footer>
-© 2026 Punjab Spice Hub | The taste is here 
+© 2026 Punjab Spice Hub | Premium Experience
 </footer></div></body>
 </html>

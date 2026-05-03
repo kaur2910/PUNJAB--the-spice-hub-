@@ -15,9 +15,9 @@
 
 .hero::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
 
-.hero h1 { font-size: 2.5rem; z-index: 1; }
+.hero h1 { font-size: 2.2rem; z-index: 1; }
 
-.hero p { font-size: 1.1rem; z-index: 1; margin-top: 10px; }
+.hero p { font-size: 1rem; z-index: 1; margin-top: 10px; }
 
 /* NAVBAR */ nav { display: flex; justify-content: center; flex-wrap: wrap; background: #ff6b35; padding: 12px; position: sticky; top: 0; z-index: 10; }
 
@@ -25,7 +25,7 @@ nav a { color: white; margin: 8px 12px; text-decoration: none; font-weight: bold
 
 /* SECTIONS */ .section { padding: 40px 15px; text-align: center; }
 
-.section h2 { margin-bottom: 20px; font-size: 1.8rem; }
+.section h2 { margin-bottom: 20px; font-size: 1.6rem; }
 
 /* GRID */ .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; padding: 10px; width: 100%; }
 
@@ -45,9 +45,11 @@ nav a { color: white; margin: 8px 12px; text-decoration: none; font-weight: bold
 
 /* FOOTER */ footer { text-align: center; padding: 15px; background: #333; color: white; margin-top: 20px; }
 
-/* MOBILE FIX */ @media (max-width: 600px) { .hero h1 { font-size: 1.8rem; }
+/* MOBILE RESPONSIVE */ @media (max-width: 600px) { .hero h1 { font-size: 1.6rem; }
 
-.hero p { font-size: 1rem; } } </style>
+.hero p { font-size: 0.9rem; }
+
+nav a { margin: 5px; font-size: 0.9rem; } } </style>
 
 </head>
 <body><!-- HERO --><div class="hero">
@@ -63,7 +65,7 @@ nav a { color: white; margin: 8px 12px; text-decoration: none; font-weight: bold
   <p>Punjab is known for its rich culture, vibrant traditions, and delicious spicy food.</p>
 </div><!-- FOOD --><div class="section" id="food">
   <h2>Popular Dishes</h2>
-  <div class="container"><!-- Removed Butter Chicken as requested -->
+  <div class="container"><!-- Only 2 dishes as requested -->
 
 <div class="card animated">
   <img src="food2.png" alt="Sarson da Saag">

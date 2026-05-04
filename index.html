@@ -20,9 +20,10 @@ html{
   scroll-behavior:smooth;
 }
 
+/* BODY */
 body{
   font-family:'Poppins',sans-serif;
-  background:linear-gradient(135deg,#fffaf3,#ffe0cc);
+  background:linear-gradient(135deg,#fff7ef,#ffe1cc);
   color:#333;
 }
 
@@ -43,16 +44,15 @@ nav a{
   text-decoration:none;
   color:#444;
   font-weight:500;
-  transition:0.3s;
 }
 
 nav a:hover{
   color:#e76f51;
 }
 
-/* HERO */
+/* HERO BANNER */
 .hero{
-  height:80vh;
+  height:90vh;
   background:url('hero.png') center/cover no-repeat;
   display:flex;
   align-items:center;
@@ -66,22 +66,36 @@ nav a:hover{
   position:absolute;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.45);
+  background:linear-gradient(180deg,rgba(0,0,0,0.4),rgba(0,0,0,0.65));
 }
 
 .hero-content{
   position:relative;
   color:white;
+  animation:fadeIn 1.5s ease;
 }
 
 .hero h1{
   font-family:'Playfair Display',serif;
-  font-size:3rem;
+  font-size:3.3rem;
 }
 
 .hero p{
   margin-top:10px;
   font-size:1.2rem;
+}
+
+/* SCROLL INDICATOR */
+.scroll{
+  margin-top:25px;
+  font-size:0.9rem;
+  opacity:0.8;
+  animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(6px);}
 }
 
 /* SECTIONS */
@@ -90,22 +104,21 @@ nav a:hover{
   text-align:center;
 }
 
-/* TITLE */
 .section h2{
   font-family:'Playfair Display',serif;
   color:#d35400;
-  margin-bottom:15px;
+  margin-bottom:20px;
   font-size:2rem;
 }
 
-/* TEXT */
 .section p{
-  max-width:750px;
+  max-width:850px;
   margin:auto;
-  line-height:1.8;
+  line-height:1.9;
+  margin-bottom:15px;
 }
 
-/* FOOD GRID */
+/* FOOD CARDS */
 .container{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -113,19 +126,16 @@ nav a:hover{
   margin-top:30px;
 }
 
-/* CARD */
 .card{
   background:white;
   border-radius:15px;
   overflow:hidden;
   box-shadow:0 6px 20px rgba(0,0,0,0.1);
   transition:0.3s;
-  cursor:pointer;
 }
 
 .card:hover{
   transform:translateY(-10px);
-  box-shadow:0 12px 30px rgba(0,0,0,0.2);
 }
 
 .card img{
@@ -134,28 +144,22 @@ nav a:hover{
   object-fit:cover;
 }
 
-.card h3{
-  padding:10px;
-}
-
-.card p{
-  padding:0 10px 15px;
-}
+.card h3{padding:10px;}
+.card p{padding:0 10px 15px;}
 
 /* RECIPE */
 .recipe{
-  background:linear-gradient(135deg,#fff1e6,#ffe7d6);
+  background:linear-gradient(135deg,#fff2e6,#ffe8d6);
   border-radius:20px;
   padding:30px;
   max-width:850px;
   margin:30px auto;
   text-align:left;
-  box-shadow:0 8px 25px rgba(0,0,0,0.08);
 }
 
 .recipe-title{
   font-family:'Great Vibes',cursive;
-  font-size:2.6rem;
+  font-size:2.8rem;
   color:#c0392b;
   text-align:center;
   margin-bottom:15px;
@@ -172,20 +176,12 @@ nav a:hover{
 
 .recipe li{
   margin-bottom:8px;
-  line-height:1.6;
+  line-height:1.7;
 }
 
 .recipe p{
   margin-top:12px;
-  line-height:1.8;
-}
-
-/* QUOTE */
-.quote{
-  margin-top:20px;
-  font-style:italic;
-  text-align:center;
-  color:#a0522d;
+  line-height:1.9;
 }
 
 /* FOOTER */
@@ -195,28 +191,10 @@ footer{
   color:#777;
 }
 
-/* IMAGE POPUP */
-.modal{
-  display:none;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.8);
-  justify-content:center;
-  align-items:center;
-  z-index:999;
-}
-
-.modal img{
-  max-width:90%;
-  max-height:80%;
-  border-radius:10px;
-}
-
-.modal.show{
-  display:flex;
+/* ANIMATION */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
 }
 
 </style>
@@ -231,20 +209,35 @@ footer{
 <a href="#recipe">Recipe</a>
 </nav>
 
-<!-- HERO -->
+<!-- HERO BANNER -->
 <div class="hero">
-<div class="hero-content">
-<h1>PUNJAB – The Spice Hub 🌾</h1>
-<p>Warmth, culture and tradition in every flavour</p>
-</div>
+  <div class="hero-content">
+    <h1>PUNJAB – The Spice Hub 🌾</h1>
+    <p>A journey through culture, flavour and tradition</p>
+    <div class="scroll">↓ Scroll to explore ↓</div>
+  </div>
 </div>
 
-<!-- ABOUT -->
+<!-- ABOUT (EXPANDED) -->
 <div class="section" id="about">
 <h2>About Punjab</h2>
+
 <p>
-Punjab is a vibrant land known for its hospitality, rich traditions, and joyful lifestyle. It reflects unity, celebration, and cultural pride that has been passed through generations.
+Punjab is a land of vibrant energy, deep traditions, and rich cultural heritage. It is known for its warm-hearted people, colourful festivals, and a lifestyle full of joy and celebration.
 </p>
+
+<p>
+The identity of Punjab is built on unity, strength, and hospitality. Guests are treated like family, and every moment is celebrated with music, dance, and food. The famous Bhangra and Gidda dances represent happiness and community spirit.
+</p>
+
+<p>
+Food is at the heart of Punjabi culture. It is not just nourishment but an expression of love and togetherness. Traditional dishes are prepared using fresh ingredients, slow cooking methods, and recipes passed down through generations. Every meal tells a story of culture, farming life, and family bonds.
+</p>
+
+<p>
+Punjab’s fertile land, known as the “Granary of India,” produces rich crops that inspire its cuisine. From mustard fields to wheat farms, everything contributes to the authentic flavours that define Punjabi food.
+</p>
+
 </div>
 
 <!-- FOOD -->
@@ -253,16 +246,16 @@ Punjab is a vibrant land known for its hospitality, rich traditions, and joyful 
 
 <div class="container">
 
-<div class="card" onclick="openImg('food2.png')">
+<div class="card">
 <img src="food2.png">
 <h3>Sarson da Saag</h3>
-<p>Traditional mustard greens dish with deep earthy flavour.</p>
+<p>A traditional winter dish made from mustard greens with rich earthy flavour.</p>
 </div>
 
-<div class="card" onclick="openImg('food3.png')">
+<div class="card">
 <img src="food3.png">
 <h3>Makki di Roti</h3>
-<p>Simple maize bread that represents Punjabi rural food.</p>
+<p>A maize bread that represents rural Punjabi food culture.</p>
 </div>
 
 </div>
@@ -276,54 +269,35 @@ Punjab is a vibrant land known for its hospitality, rich traditions, and joyful 
 
 <div class="recipe-title">Sarson da Saag</div>
 
-<strong>Ingredients (Detailed & Cultural Importance):</strong>
+<strong>Ingredients:</strong>
 <ul>
-<li>Mustard greens – main base, rich earthy taste</li>
-<li>Spinach – softens texture & balances bitterness</li>
-<li>Ginger – warmth & digestion</li>
-<li>Garlic – deep aroma</li>
-<li>Green chilies – light spice</li>
-<li>Butter – authentic Punjabi richness</li>
-<li>Spices – salt, turmeric, chili powder</li>
-<li>Corn flour – optional thickening</li>
+<li>Mustard greens (Sarson) – main base of the dish</li>
+<li>Spinach – balances bitterness and improves texture</li>
+<li>Ginger – adds warmth and aroma</li>
+<li>Garlic – enhances flavour depth</li>
+<li>Green chilies – adds light spice</li>
+<li>Butter (Makhan) – gives richness and authenticity</li>
+<li>Salt, turmeric, chilli powder – essential seasoning</li>
+<li>Optional corn flour – thickens the mixture</li>
 </ul>
 
 <strong>Method:</strong>
 <p>
-Wash greens thoroughly and boil until soft. Blend into a thick paste. Cook slowly with butter, garlic, ginger, and spices. Slow cooking enhances flavour and gives authentic Punjabi richness.
+Wash greens thoroughly and boil until soft. Mash or blend them into a thick paste. In a pan, heat butter and sauté ginger, garlic, and chilies. Add the mixture and cook slowly on low heat. This slow cooking develops deep traditional Punjabi flavour.
 </p>
 
 <p>
-Serve hot with makki di roti. This dish represents warmth, tradition, and Punjabi culture.
+Serve hot with makki di roti and extra butter on top for authentic taste.
 </p>
 
-<div class="quote">
-“Punjabi food is not just eaten — it is celebrated.”
 </div>
 
-</div>
 </div>
 
 <!-- FOOTER -->
 <footer>
-Made with ❤️ and Punjabi warmth
+Made with ❤️ and Punjabi tradition
 </footer>
-
-<!-- IMAGE POPUP -->
-<div class="modal" id="modal" onclick="closeImg()">
-<img id="popupImg">
-</div>
-
-<script>
-function openImg(src){
-  document.getElementById("modal").classList.add("show");
-  document.getElementById("popupImg").src = src;
-}
-
-function closeImg(){
-  document.getElementById("modal").classList.remove("show");
-}
-</script>
 
 </body>
 </html>

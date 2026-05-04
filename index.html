@@ -8,13 +8,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
 
-html{scroll-behavior:smooth;}
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   font-family:'Poppins',sans-serif;
-  background:linear-gradient(135deg,#fff8f0,#ffe5d9);
+  background:linear-gradient(135deg,#fffaf3,#ffe0cc);
   color:#333;
 }
 
@@ -24,7 +32,7 @@ nav{
   justify-content:center;
   gap:25px;
   padding:15px;
-  background:#ffffffcc;
+  background:#ffffffdd;
   backdrop-filter:blur(10px);
   position:sticky;
   top:0;
@@ -35,10 +43,12 @@ nav a{
   text-decoration:none;
   color:#444;
   font-weight:500;
-  letter-spacing:1px;
+  transition:0.3s;
 }
 
-nav a:hover{color:#ff7a59;}
+nav a:hover{
+  color:#e76f51;
+}
 
 /* HERO */
 .hero{
@@ -56,7 +66,7 @@ nav a:hover{color:#ff7a59;}
   position:absolute;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.5);
+  background:rgba(0,0,0,0.45);
 }
 
 .hero-content{
@@ -69,35 +79,33 @@ nav a:hover{color:#ff7a59;}
   font-size:3rem;
 }
 
-.hero p{margin-top:10px;}
+.hero p{
+  margin-top:10px;
+  font-size:1.2rem;
+}
 
-/* SECTION */
+/* SECTIONS */
 .section{
   padding:70px 20px;
   text-align:center;
-  opacity:0;
-  transform:translateY(40px);
-  transition:0.8s;
 }
 
-.section.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
+/* TITLE */
 .section h2{
   font-family:'Playfair Display',serif;
-  color:#d65a31;
+  color:#d35400;
   margin-bottom:15px;
+  font-size:2rem;
 }
 
+/* TEXT */
 .section p{
   max-width:750px;
   margin:auto;
-  line-height:1.7;
+  line-height:1.8;
 }
 
-/* CARDS */
+/* FOOD GRID */
 .container{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -105,15 +113,20 @@ nav a:hover{color:#ff7a59;}
   margin-top:30px;
 }
 
+/* CARD */
 .card{
   background:white;
   border-radius:15px;
   overflow:hidden;
   box-shadow:0 6px 20px rgba(0,0,0,0.1);
   transition:0.3s;
+  cursor:pointer;
 }
 
-.card:hover{transform:scale(1.05);}
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 12px 30px rgba(0,0,0,0.2);
+}
 
 .card img{
   width:100%;
@@ -121,32 +134,57 @@ nav a:hover{color:#ff7a59;}
   object-fit:cover;
 }
 
-.card h3{padding:10px;}
-.card p{padding:0 10px 15px;}
+.card h3{
+  padding:10px;
+}
+
+.card p{
+  padding:0 10px 15px;
+}
 
 /* RECIPE */
 .recipe{
-  background:#fff3ec;
+  background:linear-gradient(135deg,#fff1e6,#ffe7d6);
   border-radius:20px;
   padding:30px;
-  text-align:left;
-  max-width:750px;
+  max-width:850px;
   margin:30px auto;
+  text-align:left;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
 }
 
 .recipe-title{
   font-family:'Great Vibes',cursive;
-  font-size:2.5rem;
-  color:#c44536;
+  font-size:2.6rem;
+  color:#c0392b;
+  text-align:center;
+  margin-bottom:15px;
 }
 
-.recipe p{margin-top:10px;}
+.recipe strong{
+  color:#8e3b2e;
+}
 
-/* UNIQUE FEATURE */
+.recipe ul{
+  padding-left:20px;
+  margin-top:10px;
+}
+
+.recipe li{
+  margin-bottom:8px;
+  line-height:1.6;
+}
+
+.recipe p{
+  margin-top:12px;
+  line-height:1.8;
+}
+
+/* QUOTE */
 .quote{
+  margin-top:20px;
   font-style:italic;
   text-align:center;
-  margin-top:20px;
   color:#a0522d;
 }
 
@@ -157,26 +195,47 @@ footer{
   color:#777;
 }
 
-/* MOBILE */
-@media(max-width:600px){
-.hero h1{font-size:2rem;}
+/* IMAGE POPUP */
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
+  z-index:999;
 }
+
+.modal img{
+  max-width:90%;
+  max-height:80%;
+  border-radius:10px;
+}
+
+.modal.show{
+  display:flex;
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
-<a href="#">Home</a>
 <a href="#about">About</a>
 <a href="#food">Food</a>
 <a href="#recipe">Recipe</a>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
 <div class="hero-content">
 <h1>PUNJAB – The Spice Hub 🌾</h1>
-<p>Feel the warmth of Punjab</p>
+<p>Warmth, culture and tradition in every flavour</p>
 </div>
 </div>
 
@@ -184,11 +243,7 @@ footer{
 <div class="section" id="about">
 <h2>About Punjab</h2>
 <p>
-Punjab is known for its vibrant culture, rich traditions, and strong sense of community. Life in Punjab is filled with energy, celebration, and warmth. From colourful festivals to daily life, everything reflects happiness and togetherness.
-</p>
-
-<p>
-Food plays a central role in Punjabi culture. It is not just about taste, but about sharing moments with family and friends. Meals are prepared with love, using fresh ingredients and traditional methods passed down through generations.
+Punjab is a vibrant land known for its hospitality, rich traditions, and joyful lifestyle. It reflects unity, celebration, and cultural pride that has been passed through generations.
 </p>
 </div>
 
@@ -198,16 +253,16 @@ Food plays a central role in Punjabi culture. It is not just about taste, but ab
 
 <div class="container">
 
-<div class="card">
+<div class="card" onclick="openImg('food2.png')">
 <img src="food2.png">
 <h3>Sarson da Saag</h3>
-<p>A traditional dish made from mustard greens, rich in flavour and nutrition.</p>
+<p>Traditional mustard greens dish with deep earthy flavour.</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="openImg('food3.png')">
 <img src="food3.png">
 <h3>Makki di Roti</h3>
-<p>A simple maize bread that perfectly complements sarson da saag.</p>
+<p>Simple maize bread that represents Punjabi rural food.</p>
 </div>
 
 </div>
@@ -218,39 +273,56 @@ Food plays a central role in Punjabi culture. It is not just about taste, but ab
 <h2>Traditional Recipe</h2>
 
 <div class="recipe">
+
 <div class="recipe-title">Sarson da Saag</div>
 
-<p><strong>Ingredients:</strong> Mustard greens, spinach, ginger, garlic, butter, spices.</p>
+<strong>Ingredients (Detailed & Cultural Importance):</strong>
+<ul>
+<li>Mustard greens – main base, rich earthy taste</li>
+<li>Spinach – softens texture & balances bitterness</li>
+<li>Ginger – warmth & digestion</li>
+<li>Garlic – deep aroma</li>
+<li>Green chilies – light spice</li>
+<li>Butter – authentic Punjabi richness</li>
+<li>Spices – salt, turmeric, chili powder</li>
+<li>Corn flour – optional thickening</li>
+</ul>
 
-<p><strong>Method:</strong> Wash and boil greens, blend into a paste, then cook slowly with butter and spices. This slow cooking enhances the flavour and gives an authentic Punjabi taste.</p>
-
+<strong>Method:</strong>
 <p>
-This dish represents warmth, comfort, and tradition. It is commonly enjoyed during winter and brings families together.
+Wash greens thoroughly and boil until soft. Blend into a thick paste. Cook slowly with butter, garlic, ginger, and spices. Slow cooking enhances flavour and gives authentic Punjabi richness.
 </p>
 
-<div class="quote">“Food in Punjab is not just eaten, it is celebrated.”</div>
+<p>
+Serve hot with makki di roti. This dish represents warmth, tradition, and Punjabi culture.
+</p>
+
+<div class="quote">
+“Punjabi food is not just eaten — it is celebrated.”
+</div>
 
 </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
 Made with ❤️ and Punjabi warmth
 </footer>
 
+<!-- IMAGE POPUP -->
+<div class="modal" id="modal" onclick="closeImg()">
+<img id="popupImg">
+</div>
+
 <script>
-const sections = document.querySelectorAll('.section');
+function openImg(src){
+  document.getElementById("modal").classList.add("show");
+  document.getElementById("popupImg").src = src;
+}
 
-window.addEventListener('scroll', () => {
-  sections.forEach(sec => {
-    const top = window.scrollY;
-    const offset = sec.offsetTop - 200;
-    const height = sec.offsetHeight;
-
-    if(top >= offset && top < offset + height){
-      sec.classList.add('show');
-    }
-  });
-});
+function closeImg(){
+  document.getElementById("modal").classList.remove("show");
+}
 </script>
 
 </body>

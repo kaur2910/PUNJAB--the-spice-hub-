@@ -5,18 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PUNJAB – The Spice Hub</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
   font-family:'Poppins',sans-serif;
@@ -24,13 +18,7 @@ body{
   color:#333;
 }
 
-/* CONTAINER */
-.wrapper{
-  max-width:1100px;
-  margin:auto;
-}
-
-/* NAVBAR */
+/* NAV */
 nav{
   display:flex;
   justify-content:center;
@@ -48,37 +36,42 @@ nav a{
   color:#444;
   font-weight:500;
   letter-spacing:1px;
-  transition:0.3s;
 }
 
-nav a:hover{
-  color:#ff7a59;
-}
+nav a:hover{color:#ff7a59;}
 
 /* HERO */
 .hero{
-  height:75vh;
+  height:80vh;
+  background:url('hero.png') center/cover no-repeat;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:20px;
-  animation:fadeIn 1.5s ease;
+  position:relative;
+}
+
+.hero::after{
+  content:'';
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+}
+
+.hero-content{
+  position:relative;
+  color:white;
 }
 
 .hero h1{
   font-family:'Playfair Display',serif;
   font-size:3rem;
-  color:#d65a31;
 }
 
-.hero p{
-  margin-top:10px;
-  font-size:1.2rem;
-  color:#555;
-}
+.hero p{margin-top:10px;}
 
-/* SECTIONS */
+/* SECTION */
 .section{
   padding:70px 20px;
   text-align:center;
@@ -94,18 +87,17 @@ nav a:hover{
 
 .section h2{
   font-family:'Playfair Display',serif;
-  font-size:2rem;
-  margin-bottom:15px;
   color:#d65a31;
+  margin-bottom:15px;
 }
 
 .section p{
-  max-width:700px;
+  max-width:750px;
   margin:auto;
   line-height:1.7;
 }
 
-/* FOOD CARDS */
+/* CARDS */
 .container{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -121,53 +113,41 @@ nav a:hover{
   transition:0.3s;
 }
 
-.card:hover{
-  transform:translateY(-8px) scale(1.02);
-}
+.card:hover{transform:scale(1.05);}
 
 .card img{
   width:100%;
   height:200px;
   object-fit:cover;
-  transition:0.3s;
 }
 
-.card:hover img{
-  transform:scale(1.05);
-}
-
-.card h3{
-  padding:10px;
-}
-
-.card p{
-  padding:0 10px 15px;
-  font-size:0.9rem;
-}
+.card h3{padding:10px;}
+.card p{padding:0 10px 15px;}
 
 /* RECIPE */
 .recipe{
   background:#fff3ec;
   border-radius:20px;
-  padding:25px;
+  padding:30px;
   text-align:left;
-  max-width:700px;
+  max-width:750px;
   margin:30px auto;
-  box-shadow:0 6px 15px rgba(0,0,0,0.08);
 }
 
-.recipe h3{
-  font-family:'Playfair Display',serif;
+.recipe-title{
+  font-family:'Great Vibes',cursive;
+  font-size:2.5rem;
   color:#c44536;
-  margin-bottom:10px;
 }
 
-.recipe ul{
-  padding-left:20px;
-}
+.recipe p{margin-top:10px;}
 
-.recipe li{
-  margin-bottom:5px;
+/* UNIQUE FEATURE */
+.quote{
+  font-style:italic;
+  text-align:center;
+  margin-top:20px;
+  color:#a0522d;
 }
 
 /* FOOTER */
@@ -177,37 +157,26 @@ footer{
   color:#777;
 }
 
-/* ANIMATION */
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(20px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
 /* MOBILE */
 @media(max-width:600px){
-  .hero h1{
-    font-size:2rem;
-  }
+.hero h1{font-size:2rem;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="wrapper">
-
-<!-- NAV -->
 <nav>
+<a href="#">Home</a>
 <a href="#about">About</a>
 <a href="#food">Food</a>
 <a href="#recipe">Recipe</a>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
-<div>
+<div class="hero-content">
 <h1>PUNJAB – The Spice Hub 🌾</h1>
-<p>Simple, warm and full of flavour</p>
+<p>Feel the warmth of Punjab</p>
 </div>
 </div>
 
@@ -215,10 +184,11 @@ footer{
 <div class="section" id="about">
 <h2>About Punjab</h2>
 <p>
-Punjab is a land of warmth, culture, and strong traditions. It is known for its welcoming people, vibrant lifestyle, and deep-rooted heritage.
+Punjab is known for its vibrant culture, rich traditions, and strong sense of community. Life in Punjab is filled with energy, celebration, and warmth. From colourful festivals to daily life, everything reflects happiness and togetherness.
 </p>
+
 <p>
-Food plays an important role in Punjabi culture. Meals are about sharing happiness, creating memories, and bringing people together through rich flavours and traditions.
+Food plays a central role in Punjabi culture. It is not just about taste, but about sharing moments with family and friends. Meals are prepared with love, using fresh ingredients and traditional methods passed down through generations.
 </p>
 </div>
 
@@ -231,13 +201,13 @@ Food plays an important role in Punjabi culture. Meals are about sharing happine
 <div class="card">
 <img src="food2.png">
 <h3>Sarson da Saag</h3>
-<p>A warm dish made from mustard greens with deep earthy flavour.</p>
+<p>A traditional dish made from mustard greens, rich in flavour and nutrition.</p>
 </div>
 
 <div class="card">
 <img src="food3.png">
 <h3>Makki di Roti</h3>
-<p>A simple maize bread that perfectly complements saag.</p>
+<p>A simple maize bread that perfectly complements sarson da saag.</p>
 </div>
 
 </div>
@@ -248,33 +218,24 @@ Food plays an important role in Punjabi culture. Meals are about sharing happine
 <h2>Traditional Recipe</h2>
 
 <div class="recipe">
-<h3>Sarson da Saag</h3>
+<div class="recipe-title">Sarson da Saag</div>
 
-<strong>Ingredients:</strong>
-<ul>
-<li>Mustard greens</li>
-<li>Spinach</li>
-<li>Ginger & garlic</li>
-<li>Butter</li>
-</ul>
+<p><strong>Ingredients:</strong> Mustard greens, spinach, ginger, garlic, butter, spices.</p>
 
-<strong>Method:</strong>
-<p>
-Boil greens, blend them, and cook slowly with butter and spices. This slow cooking gives the authentic Punjabi taste.
-</p>
+<p><strong>Method:</strong> Wash and boil greens, blend into a paste, then cook slowly with butter and spices. This slow cooking enhances the flavour and gives an authentic Punjabi taste.</p>
 
 <p>
-This dish represents warmth, tradition, and comfort in Punjabi culture.
+This dish represents warmth, comfort, and tradition. It is commonly enjoyed during winter and brings families together.
 </p>
+
+<div class="quote">“Food in Punjab is not just eaten, it is celebrated.”</div>
+
 </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
-Made with warmth & tradition 🌾
+Made with ❤️ and Punjabi warmth
 </footer>
-
-</div>
 
 <script>
 const sections = document.querySelectorAll('.section');

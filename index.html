@@ -2,220 +2,341 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- TITLE (IMPORTANT FOR VALIDATION) -->
-  <title>Punjab – The Spice Hub</title>
+<title>Punjab – The Spice Hub</title>
 
-  <!-- GOOGLE FONTS -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600&family=Great+Vibes&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #fff6ee;
-      color: #333;
-    }
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      padding: 15px;
-      background: #fff;
-      border-bottom: 1px solid #eee;
-      position: sticky;
-      top: 0;
-    }
+body{
+  font-family:'Poppins',sans-serif;
+  background:#fff6ee;
+  color:#333;
+  line-height:1.8;
+}
 
-    nav a {
-      text-decoration: none;
-      color: #444;
-      font-weight: 500;
-    }
+/* NAV */
+nav{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  padding:15px;
+  background:#ffffffee;
+  position:sticky;
+  top:0;
+  border-bottom:1px solid #eee;
+}
 
-    nav a:hover {
-      color: #d35400;
-    }
+nav a{
+  text-decoration:none;
+  color:#444;
+  font-weight:500;
+  transition:0.3s;
+}
 
-    .hero {
-      height: 90vh;
-      background: url('hero.png') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-    }
+nav a:hover{
+  color:#d35400;
+}
 
-    .hero::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-    }
+/* HERO */
+.hero{
+  height:90vh;
+  background:url('hero.png') center/cover no-repeat;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+}
 
-    .hero-content {
-      position: relative;
-      color: white;
-    }
+.hero::after{
+  content:'';
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.55);
+}
 
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
-      background: linear-gradient(90deg,#ffb347,#ffcc33,#ff7e5f);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+.hero-content{
+  position:relative;
+  color:white;
+  animation:fadeUp 1s ease;
+}
 
-    .section {
-      padding: 60px 20px;
-      text-align: center;
-    }
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:3.8rem;
+  background:linear-gradient(90deg,#ffb347,#ffd27f,#ff7e5f);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 
-    .section h2 {
-      font-family: 'Playfair Display', serif;
-      color: #d35400;
-      margin-bottom: 20px;
-    }
+.hero p{
+  margin-top:10px;
+  font-size:1.2rem;
+}
 
-    .about-box {
-      max-width: 800px;
-      margin: auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-    }
+/* SECTION */
+.section{
+  padding:70px 20px;
+  text-align:center;
+}
 
-    .food-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 20px;
-    }
+.section h2{
+  font-family:'Playfair Display',serif;
+  color:#d35400;
+  margin-bottom:20px;
+  font-size:2.2rem;
+}
 
-    .card {
-      background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-    }
+/* ABOUT */
+.about-box{
+  max-width:850px;
+  margin:auto;
+  background:#fff;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+  text-align:left;
+}
 
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
+.about-box p{
+  margin-bottom:15px;
+}
 
-    .recipe {
-      max-width: 800px;
-      margin: auto;
-      background: #ffe5cc;
-      padding: 20px;
-      border-radius: 15px;
-      text-align: left;
-    }
+/* FOOD */
+.food-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
 
-    .contact-box {
-      max-width: 600px;
-      margin: auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-    }
+.card{
+  background:#fff;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
 
-    .contact-box input,
-    .contact-box textarea {
-      width: 100%;
-      margin: 10px 0;
-      padding: 10px;
-    }
+.card:hover{
+  transform:translateY(-8px);
+}
 
-    .contact-box button {
-      padding: 10px 15px;
-      background: #d35400;
-      color: white;
-      border: none;
-    }
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #777;
-    }
+.card h3{
+  padding:10px;
+}
 
-  </style>
+.card p{
+  padding:0 10px 15px;
+}
+
+/* RECIPE */
+.recipe{
+  max-width:850px;
+  margin:auto;
+  background:linear-gradient(135deg,#fff2e6,#ffe0cc);
+  padding:30px;
+  border-radius:20px;
+  text-align:left;
+}
+
+.recipe-title{
+  font-family:'Great Vibes',cursive;
+  font-size:3rem;
+  text-align:center;
+  color:#c0392b;
+}
+
+.recipe p{
+  margin-top:12px;
+}
+
+.recipe ul{
+  margin-top:10px;
+  padding-left:20px;
+}
+
+.recipe li{
+  margin-bottom:8px;
+}
+
+/* CONTACT */
+.contact-box{
+  max-width:650px;
+  margin:auto;
+  background:#fff;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.contact-box input,
+.contact-box textarea{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border-radius:10px;
+  border:1px solid #ddd;
+}
+
+.contact-box button{
+  margin-top:10px;
+  padding:12px;
+  background:#d35400;
+  color:white;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.contact-box button:hover{
+  background:#e67e22;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  color:#777;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#food">Food</a>
-  <a href="#recipe">Recipe</a>
-  <a href="#contact">Contact</a>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#food">Food</a>
+<a href="#recipe">Recipe</a>
+<a href="#contact">Contact</a>
 </nav>
 
 <!-- HERO -->
 <div class="hero" id="home">
   <div class="hero-content">
     <h1>PUNJAB – The Spice Hub 🌾</h1>
-    <p>Culture • Food • Tradition</p>
+    <p>Celebrating Culture, Tradition, and Authentic Flavours</p>
   </div>
 </div>
 
 <!-- ABOUT -->
 <div class="section" id="about">
-  <h2>About Punjab</h2>
-  <div class="about-box">
-    <p>Punjab is known for its rich culture, traditions, and food.</p>
-  </div>
+<h2>About Punjab</h2>
+
+<div class="about-box">
+<p>
+Punjab is one of the most culturally vibrant regions, known for its rich traditions, strong community values, and welcoming nature. The culture of Punjab reflects joy, celebration, and unity, which can be seen in its festivals, music, and daily life.
+</p>
+
+<p>
+Agriculture plays a central role in Punjab, making it one of the most fertile regions. The connection between land and lifestyle is deeply rooted, influencing food habits and traditions.
+</p>
+
+<p>
+Punjabi cuisine is known for its bold flavours and generous use of butter, spices, and fresh ingredients. Food is not just a necessity but a way to bring people together and express hospitality.
+</p>
+
+<p>
+Traditional dances like Bhangra and Gidda show the energy and happiness of Punjabi culture, making it lively and unique.
+</p>
+</div>
 </div>
 
 <!-- FOOD -->
 <div class="section" id="food">
-  <h2>Popular Food</h2>
-  <div class="food-grid">
-    <div class="card">
-      <img src="food2.png" alt="Sarson da Saag">
-      <h3>Sarson da Saag</h3>
-    </div>
-    <div class="card">
-      <img src="food3.png" alt="Makki di Roti">
-      <h3>Makki di Roti</h3>
-    </div>
-  </div>
+<h2>Popular Dishes</h2>
+
+<div class="food-grid">
+
+<div class="card">
+<img src="food2.png" alt="Sarson da Saag">
+<h3>Sarson da Saag</h3>
+<p>A traditional Punjabi dish made with mustard greens, slow cooked to create a rich and authentic flavour.</p>
+</div>
+
+<div class="card">
+<img src="food3.png" alt="Makki di Roti">
+<h3>Makki di Roti</h3>
+<p>A maize-based flatbread that perfectly complements saag and represents rural Punjabi traditions.</p>
+</div>
+
+</div>
 </div>
 
 <!-- RECIPE -->
 <div class="section" id="recipe">
-  <h2>Recipe</h2>
-  <div class="recipe">
-    <p>Sarson da Saag is a traditional Punjabi dish made with mustard greens.</p>
-  </div>
+<h2>Traditional Recipe</h2>
+
+<div class="recipe">
+
+<div class="recipe-title">Sarson da Saag</div>
+
+<p>
+Sarson da Saag is a classic Punjabi dish that represents warmth, comfort, and tradition. It is commonly prepared during winter and served with makki di roti and fresh butter.
+</p>
+
+<h4>Ingredients:</h4>
+<ul>
+<li>Mustard greens (sarson)</li>
+<li>Spinach</li>
+<li>Ginger and garlic</li>
+<li>Green chilies</li>
+<li>Butter (makhan)</li>
+<li>Salt and spices</li>
+</ul>
+
+<h4>Method:</h4>
+<p>
+Wash and boil the greens until soft. Mash them thoroughly to create a smooth texture. Cook the mixture slowly with butter, ginger, garlic, and spices. Slow cooking enhances the flavour and gives it an authentic Punjabi taste.
+</p>
+
+<p>
+Serve hot with makki di roti and a dollop of butter. This dish represents the essence of Punjabi culture and hospitality.
+</p>
+
+</div>
 </div>
 
 <!-- CONTACT -->
 <div class="section" id="contact">
-  <h2>Contact</h2>
-  <div class="contact-box">
-    <input type="text" placeholder="Name">
-    <input type="email" placeholder="Email">
-    <textarea placeholder="Message"></textarea>
-    <button>Send</button>
-  </div>
+<h2>Contact</h2>
+
+<div class="contact-box">
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea rows="5" placeholder="Your Message"></textarea>
+<button>Send Message</button>
+</div>
+
 </div>
 
 <footer>
-  Made with ❤️
+Made with ❤️ to represent Punjabi culture
 </footer>
 
 </body>
